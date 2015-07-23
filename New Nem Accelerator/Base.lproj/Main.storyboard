@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njf-bf-Swi">
-                                <rect key="frame" x="16" y="84" width="51" height="48"/>
+                                <rect key="frame" x="16" y="140" width="51" height="48"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="&lt;">
@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxF-7x-HXb">
-                                <rect key="frame" x="70" y="84" width="51" height="48"/>
+                                <rect key="frame" x="70" y="140" width="51" height="48"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="&gt;">
@@ -69,12 +69,6 @@
                                 <rect key="frame" x="210" y="150" width="150" height="2"/>
                                 <color key="tintColor" red="0.1960784314" green="0.50980392159999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="260" translatesAutoresizingMaskIntoConstraints="NO" id="g6K-Ex-UQC">
-                                <rect key="frame" x="467" y="93" width="124" height="31"/>
-                                <connections>
-                                    <action selector="accelerate:" destination="BYZ-38-t0r" eventType="valueChanged" id="0ce-sB-nSy"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  |                |                |                |" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWm-Kd-9D2">
                                 <rect key="frame" x="211" y="139" width="149" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
@@ -84,8 +78,44 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="WsT-aY-Ovo">
                                 <rect key="frame" x="368" y="140" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aX-B6-tC9">
+                                <rect key="frame" x="501" y="28" width="51" height="48"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="▶︎">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushAccelerator:" destination="BYZ-38-t0r" eventType="touchDown" id="nAL-bf-xBd"/>
+                                    <action selector="releaseAccelerator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FDg-M5-XmM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBF-AH-e2H">
+                                <rect key="frame" x="501" y="84" width="51" height="48"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="◉">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keepAcceleration:" destination="BYZ-38-t0r" eventType="touchDown" id="WcM-8O-gzH"/>
+                                    <action selector="releaseAccelerator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Sb-Dw-6t6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fy-ao-9GK">
+                                <rect key="frame" x="501" y="140" width="51" height="48"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="◼︎">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushBreaker:" destination="BYZ-38-t0r" eventType="touchDown" id="jGx-Si-esC"/>
+                                    <action selector="releaseBreaker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Scr-qP-3QO"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eJ-Qi-htK">
-                                <rect key="frame" x="16" y="140" width="51" height="48"/>
+                                <rect key="frame" x="16" y="28" width="51" height="48"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="📢">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,9 +130,11 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="acceleratorSlider" destination="g6K-Ex-UQC" id="l3s-Ld-CHt"/>
+                        <outlet property="accelerateButton" destination="0aX-B6-tC9" id="M1c-N2-u3X"/>
+                        <outlet property="breakButton" destination="2fy-ao-9GK" id="34a-An-Q70"/>
                         <outlet property="fuelProgressView" destination="yoF-id-mou" id="gIR-97-jll"/>
                         <outlet property="ignitionButton" destination="WeJ-I1-LXU" id="XbH-6H-Nh8"/>
+                        <outlet property="keepAccelerationButton" destination="iBF-AH-e2H" id="S1O-tf-X5f"/>
                         <outlet property="leftArrowButton" destination="njf-bf-Swi" id="hwk-Ng-n2t"/>
                         <outlet property="refuelActivityIndicatorView" destination="WsT-aY-Ovo" id="rmf-Zl-Cr6"/>
                         <outlet property="refuelButton" destination="tpC-0u-X3T" id="Nck-Mg-qg2"/>

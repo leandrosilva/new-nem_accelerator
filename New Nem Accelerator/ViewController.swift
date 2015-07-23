@@ -22,10 +22,14 @@ class ViewController: UIViewController {
     
     var engineIsOn = false
     
-    var fuelWatcher = NSTimer()
+    var speed = 0.0
+    var breaking = false
+    var accelerationAgent = NSTimer()
+    
+    var fuelWatcherAgent = NSTimer()
     var refuelAgent = NSTimer()
     
-    var arrowBlinker = NSTimer()
+    var arrowBlinkerAgent = NSTimer()
     var leftArrowIsBlinking = false
     var rightArrowIsBlinking = false
     
@@ -34,10 +38,16 @@ class ViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var speedometerLabel: UILabel!
     @IBOutlet weak var fuelProgressView: UIProgressView!
+
     @IBOutlet weak var ignitionButton: UIButton!
-    @IBOutlet weak var acceleratorSlider: UISlider!
+    
+    @IBOutlet weak var accelerateButton: UIButton!
+    @IBOutlet weak var keepAccelerationButton: UIButton!
+    @IBOutlet weak var breakButton: UIButton!
+    
     @IBOutlet weak var leftArrowButton: UIButton!
     @IBOutlet weak var rightArrowButton: UIButton!
+    
     @IBOutlet weak var refuelButton: UIButton!
     @IBOutlet weak var refuelActivityIndicatorView: UIActivityIndicatorView!
     
@@ -45,14 +55,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // UI customization
-        let transform = CGAffineTransformMakeRotation(CGFloat(M_PI * -0.5))
-        acceleratorSlider.transform = transform
-        
         // UI Behavior
         checkDisplayState()
         
-        fuelWatcher = NSTimer.scheduledTimerWithTimeInterval(1 * 60, target:self, selector: Selector("watchFuelAvailability"), userInfo: nil, repeats: true)
+        fuelWatcherAgent = NSTimer.scheduledTimerWithTimeInterval(1 * 60, target:self, selector: Selector("watchFuelAvailability"), userInfo: nil, repeats: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,22 +67,30 @@ class ViewController: UIViewController {
     }
     
     func checkDisplayState() {
-        acceleratorSlider.userInteractionEnabled = engineIsOn
+        accelerateButton.userInteractionEnabled = engineIsOn
+        keepAccelerationButton.userInteractionEnabled = engineIsOn
+        breakButton.userInteractionEnabled = engineIsOn
         leftArrowButton.userInteractionEnabled = engineIsOn
         rightArrowButton.userInteractionEnabled = engineIsOn
         refuelButton.userInteractionEnabled = !engineIsOn
-        
+
         if engineIsOn {
-            ignitionButton.tintColor = RED_COLOR
             speedometerLabel.textColor = BLUE_COLOR
             fuelProgressView.tintColor = BLUE_COLOR
+            ignitionButton.tintColor = RED_COLOR
+            accelerateButton.tintColor = BLUE_COLOR
+            keepAccelerationButton.tintColor = BLUE_COLOR
+            breakButton.tintColor = BLUE_COLOR
             leftArrowButton.setTitleColor(BLUE_COLOR, forState: UIControlState.Normal)
             rightArrowButton.setTitleColor(BLUE_COLOR, forState: UIControlState.Normal)
         } else {
-            ignitionButton.tintColor = BLUE_COLOR
             speedometerLabel.text = "---"
             speedometerLabel.textColor = LIGHT_GRAY_COLOR
             fuelProgressView.tintColor = LIGHT_GRAY_COLOR
+            ignitionButton.tintColor = BLUE_COLOR
+            accelerateButton.tintColor = GRAY_COLOR
+            keepAccelerationButton.tintColor = GRAY_COLOR
+            breakButton.tintColor = GRAY_COLOR
             leftArrowButton.setTitleColor(GRAY_COLOR, forState: UIControlState.Normal)
             rightArrowButton.setTitleColor(GRAY_COLOR, forState: UIControlState.Normal)
         }
@@ -99,7 +113,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func ignition(sender: UIButton) {
-        if acceleratorSlider.value <= 0 {
+        if speed == 0 {
             engineIsOn = !engineIsOn
             
             resetArrowBlinker()
@@ -107,8 +121,74 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func accelerate(sender: UISlider) {
-        speedometerLabel.text = String(stringInterpolationSegment: Int(sender.value))
+    @IBAction func pushAccelerator(sender: UIButton) {
+        if speed < 260 {
+            accelerationAgent.invalidate()
+            accelerationAgent = NSTimer.scheduledTimerWithTimeInterval(0.2, target:self, selector:
+                Selector("accelerate"), userInfo: nil, repeats: true)
+        }
+    }
+    
+    func accelerate() {
+        if speed < 260 {
+            var percent:Double;
+            
+            if speed < 30 {
+                percent = 0.1
+            } else if speed < 50 {
+                percent = 0.05
+            } else if speed < 80 {
+                percent = 0.02
+            } else {
+                percent = 0.0
+            }
+            
+            speed = round(speed + 1.0 + Double(speed) * percent)
+            
+            speedometerLabel.text = String(stringInterpolationSegment: Int(speed))
+        }
+    }
+
+    @IBAction func keepAcceleration(sender: UIButton) {
+        if speed > 0 {
+            accelerationAgent.invalidate()
+        }
+    }
+    
+    @IBAction func releaseAccelerator(sender: UIButton) {
+        accelerationAgent.invalidate()
+        accelerationAgent = NSTimer.scheduledTimerWithTimeInterval(0.3, target:self, selector:
+            Selector("deaccelerate"), userInfo: nil, repeats: true)
+    }
+    
+    func deaccelerate() {
+        if speed > 0 {
+            var percent = 0.0;
+            
+            if breaking {
+                if speed < 30 {
+                    percent = 0.1
+                } else if speed < 50 {
+                    percent = 0.05
+                } else if speed < 80 {
+                    percent = 0.02
+                } else {
+                    percent = 0.0
+                }
+            }
+            
+            speed = round(speed - 1 - Double(speed) * percent)
+            
+            speedometerLabel.text = String(stringInterpolationSegment: Int(speed))
+        }
+    }
+    
+    @IBAction func pushBreaker(sender: UIButton) {
+        breaking = true
+    }
+    
+    @IBAction func releaseBreaker(sender: UIButton) {
+        breaking = false
     }
     
     @IBAction func refuel(sender: UIButton) {
@@ -139,7 +219,7 @@ class ViewController: UIViewController {
                 resetArrowBlinker()
                 leftArrowIsBlinking = true
                 
-                arrowBlinker = NSTimer.scheduledTimerWithTimeInterval(0.7, target:self, selector: Selector("blinkLeftArrow"), userInfo: nil, repeats: true)
+                arrowBlinkerAgent = NSTimer.scheduledTimerWithTimeInterval(0.7, target:self, selector: Selector("blinkLeftArrow"), userInfo: nil, repeats: true)
             }
         }
     }
@@ -152,7 +232,7 @@ class ViewController: UIViewController {
                 resetArrowBlinker()
                 rightArrowIsBlinking = true
                 
-                arrowBlinker = NSTimer.scheduledTimerWithTimeInterval(0.7, target:self, selector: Selector("blinkRightArrow"), userInfo: nil, repeats: true)
+                arrowBlinkerAgent = NSTimer.scheduledTimerWithTimeInterval(0.7, target:self, selector: Selector("blinkRightArrow"), userInfo: nil, repeats: true)
             }
         }
     }
@@ -178,7 +258,7 @@ class ViewController: UIViewController {
     }
     
     func resetArrowBlinker() {
-        arrowBlinker.invalidate()
+        arrowBlinkerAgent.invalidate()
 
         leftArrowButton.setTitle("<", forState: UIControlState.Normal)
         leftArrowButton.setTitleColor(BLUE_COLOR, forState: UIControlState.Normal)
