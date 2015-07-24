@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C9A8D6A1B5FD8AB002433E9"
-               BuildableName = "New Nem Accelerator.app"
-               BlueprintName = "New Nem Accelerator"
-               ReferencedContainer = "container:New Nem Accelerator.xcodeproj">
+               BuildableName = "New-Nem_Accelerator.app"
+               BlueprintName = "New-Nem_Accelerator"
+               ReferencedContainer = "container:New-Nem_Accelerator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C9A8D7F1B5FD8AB002433E9"
-               BuildableName = "New Nem AcceleratorTests.xctest"
-               BlueprintName = "New Nem AcceleratorTests"
-               ReferencedContainer = "container:New Nem Accelerator.xcodeproj">
+               BuildableName = "New-Nem_AcceleratorTests.xctest"
+               BlueprintName = "New-Nem_AcceleratorTests"
+               ReferencedContainer = "container:New-Nem_Accelerator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C9A8D7F1B5FD8AB002433E9"
-               BuildableName = "New Nem AcceleratorTests.xctest"
-               BlueprintName = "New Nem AcceleratorTests"
-               ReferencedContainer = "container:New Nem Accelerator.xcodeproj">
+               BuildableName = "New-Nem_AcceleratorTests.xctest"
+               BlueprintName = "New-Nem_AcceleratorTests"
+               ReferencedContainer = "container:New-Nem_Accelerator.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C9A8D6A1B5FD8AB002433E9"
-            BuildableName = "New Nem Accelerator.app"
-            BlueprintName = "New Nem Accelerator"
-            ReferencedContainer = "container:New Nem Accelerator.xcodeproj">
+            BuildableName = "New-Nem_Accelerator.app"
+            BlueprintName = "New-Nem_Accelerator"
+            ReferencedContainer = "container:New-Nem_Accelerator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C9A8D6A1B5FD8AB002433E9"
-            BuildableName = "New Nem Accelerator.app"
-            BlueprintName = "New Nem Accelerator"
-            ReferencedContainer = "container:New Nem Accelerator.xcodeproj">
+            BuildableName = "New-Nem_Accelerator.app"
+            BlueprintName = "New-Nem_Accelerator"
+            ReferencedContainer = "container:New-Nem_Accelerator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C9A8D6A1B5FD8AB002433E9"
-            BuildableName = "New Nem Accelerator.app"
-            BlueprintName = "New Nem Accelerator"
-            ReferencedContainer = "container:New Nem Accelerator.xcodeproj">
+            BuildableName = "New-Nem_Accelerator.app"
+            BlueprintName = "New-Nem_Accelerator"
+            ReferencedContainer = "container:New-Nem_Accelerator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

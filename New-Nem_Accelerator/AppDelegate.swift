@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  New Nem Accelerator
+//  New-Nem_Accelerator
 //
 //  Created by Leandro Silva on 7/22/15.
 //  Copyright (c) 2015 The Daddy. All rights reserved.
@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        sleep(5)
         return true
     }
 

@@ -1,6 +1,6 @@
 //
 //  New_Nem_AcceleratorTests.swift
-//  New Nem AcceleratorTests
+//  New-Nem_AcceleratorTests
 //
 //  Created by Leandro Silva on 7/22/15.
 //  Copyright (c) 2015 The Daddy. All rights reserved.
