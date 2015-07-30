@@ -15,6 +15,14 @@
 		9C9A8D871B5FD8AB002433E9 /* New_Nem_AcceleratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A8D861B5FD8AB002433E9 /* New_Nem_AcceleratorTests.swift */; };
 		9C9A8D911B6038FA002433E9 /* audi_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9A8D901B6038FA002433E9 /* audi_logo.png */; };
 		9C9A8D931B604EB5002433E9 /* buzz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C9A8D921B604EB5002433E9 /* buzz.mp3 */; };
+		9CB4137B1B6A6C3B00B3D325 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB413781B6A6C3B00B3D325 /* Icon-Small.png */; };
+		9CB4137C1B6A6C3B00B3D325 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB413791B6A6C3B00B3D325 /* Icon-Small@2x.png */; };
+		9CB4137D1B6A6C3B00B3D325 /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB4137A1B6A6C3B00B3D325 /* Icon-Small@3x.png */; };
+		9CB413831B6A6C4D00B3D325 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB4137E1B6A6C4D00B3D325 /* Icon-40.png */; };
+		9CB413841B6A6C4D00B3D325 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB4137F1B6A6C4D00B3D325 /* Icon-40@2x.png */; };
+		9CB413851B6A6C4D00B3D325 /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB413801B6A6C4D00B3D325 /* Icon-40@3x.png */; };
+		9CB413861B6A6C4D00B3D325 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB413811B6A6C4D00B3D325 /* Icon-60@2x.png */; };
+		9CB413871B6A6C4D00B3D325 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB413821B6A6C4D00B3D325 /* Icon-60@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,14 @@
 		9C9A8D861B5FD8AB002433E9 /* New_Nem_AcceleratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = New_Nem_AcceleratorTests.swift; sourceTree = "<group>"; };
 		9C9A8D901B6038FA002433E9 /* audi_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audi_logo.png; sourceTree = "<group>"; };
 		9C9A8D921B604EB5002433E9 /* buzz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buzz.mp3; sourceTree = "<group>"; };
+		9CB413781B6A6C3B00B3D325 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		9CB413791B6A6C3B00B3D325 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		9CB4137A1B6A6C3B00B3D325 /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@3x.png"; sourceTree = "<group>"; };
+		9CB4137E1B6A6C4D00B3D325 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
+		9CB4137F1B6A6C4D00B3D325 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		9CB413801B6A6C4D00B3D325 /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@3x.png"; sourceTree = "<group>"; };
+		9CB413811B6A6C4D00B3D325 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		9CB413821B6A6C4D00B3D325 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +110,17 @@
 		9C9A8D6E1B5FD8AB002433E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9C9A8D921B604EB5002433E9 /* buzz.mp3 */,
 				9C9A8D901B6038FA002433E9 /* audi_logo.png */,
+				9C9A8D921B604EB5002433E9 /* buzz.mp3 */,
 				9C9A8D6F1B5FD8AB002433E9 /* Info.plist */,
+				9CB413781B6A6C3B00B3D325 /* Icon-Small.png */,
+				9CB413791B6A6C3B00B3D325 /* Icon-Small@2x.png */,
+				9CB4137A1B6A6C3B00B3D325 /* Icon-Small@3x.png */,
+				9CB4137E1B6A6C4D00B3D325 /* Icon-40.png */,
+				9CB4137F1B6A6C4D00B3D325 /* Icon-40@2x.png */,
+				9CB413801B6A6C4D00B3D325 /* Icon-40@3x.png */,
+				9CB413811B6A6C4D00B3D325 /* Icon-60@2x.png */,
+				9CB413821B6A6C4D00B3D325 /* Icon-60@3x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -201,9 +225,17 @@
 			files = (
 				9C9A8D761B5FD8AB002433E9 /* Main.storyboard in Resources */,
 				9C9A8D931B604EB5002433E9 /* buzz.mp3 in Resources */,
+				9CB4137B1B6A6C3B00B3D325 /* Icon-Small.png in Resources */,
 				9C9A8D7B1B5FD8AB002433E9 /* LaunchScreen.xib in Resources */,
 				9C9A8D781B5FD8AB002433E9 /* Images.xcassets in Resources */,
 				9C9A8D911B6038FA002433E9 /* audi_logo.png in Resources */,
+				9CB4137D1B6A6C3B00B3D325 /* Icon-Small@3x.png in Resources */,
+				9CB4137C1B6A6C3B00B3D325 /* Icon-Small@2x.png in Resources */,
+				9CB413831B6A6C4D00B3D325 /* Icon-40.png in Resources */,
+				9CB413871B6A6C4D00B3D325 /* Icon-60@3x.png in Resources */,
+				9CB413841B6A6C4D00B3D325 /* Icon-40@2x.png in Resources */,
+				9CB413851B6A6C4D00B3D325 /* Icon-40@3x.png in Resources */,
+				9CB413861B6A6C4D00B3D325 /* Icon-60@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +387,7 @@
 				INFOPLIST_FILE = "New-Nem_Accelerator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -366,6 +399,7 @@
 				INFOPLIST_FILE = "New-Nem_Accelerator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
