@@ -118,6 +118,10 @@ class ViewController: UIViewController {
             
             resetArrowBlinker()
             checkDisplayState()
+            
+            if engineIsOn {
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            }
         }
     }
     
